@@ -1,0 +1,16 @@
+{
+  "name": "backstopjs-exemplo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "backstop test",
+    "backstop:approve": "backstop approve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "backstopjs": "^3.7.0"
+  }
+}
