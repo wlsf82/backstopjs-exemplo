@@ -10,6 +10,11 @@
       "label": "tablet",
       "width": 1024,
       "height": 768
+    },
+    {
+      "label": "desktop",
+      "width": 1280,
+      "height": 1024
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",
@@ -19,36 +24,117 @@
       "label": "Home page",
       "url": "https://talkingabouttesting.coursify.me/",
       "delay": 3000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Home page without bottom cookie alert",
+      "url": "https://talkingabouttesting.coursify.me/",
+      "readySelector": ".bootom-cookie-alert button",
+      "clickSelector": ".bootom-cookie-alert button",
+      "postInteractionWait": 3000,
+      "misMatchThreshold": 1,
       "requireSameDimensions": false
     },
     {
       "label": "Instructors",
       "url": "https://talkingabouttesting.coursify.me/instructors",
       "delay": 3000,
+      "misMatchThreshold": 1,
       "requireSameDimensions": false
     },
     {
       "label": "Introduction to test automation",
       "url": "https://talkingabouttesting.coursify.me/courses/introducao-aos-testes-automatizados",
       "delay": 3000,
+      "misMatchThreshold": 1,
       "requireSameDimensions": false
     },
     {
       "label": "Backstopjs",
       "url": "https://talkingabouttesting.coursify.me/courses/testes-de-regressao-visual-com-backstopjs",
       "delay": 3000,
+      "misMatchThreshold": 1,
       "requireSameDimensions": false
     },
     {
       "label": "Protractor",
       "url": "https://talkingabouttesting.coursify.me/courses/arquitetura-de-testes-com-protractor",
       "delay": 3000,
+      "misMatchThreshold": 1,
       "requireSameDimensions": false
     },
     {
       "label": "backstop-config",
       "url": "https://talkingabouttesting.coursify.me/courses/mini-curso-testes-de-regressao-visual-com-backstop-config",
       "delay": 3000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Sign in",
+      "url": "https://talkingabouttesting.coursify.me/auth/coursifyme?origin=https%3A%2F%2Ftalkingabouttesting.coursify.me%2F&sso_path=%2Fusers%2Fsign_in",
+      "delay": 3000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Try to sign in without filling the form",
+      "url": "https://talkingabouttesting.coursify.me/auth/coursifyme?origin=https%3A%2F%2Ftalkingabouttesting.coursify.me%2F&sso_path=%2Fusers%2Fsign_in",
+      "readySelector": "input[type=submit]",
+      "clickSelector": "input[type=submit]",
+      "postInteractionWait": 1000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Try to sign in using invalid email format (e.g. 'foo')",
+      "url": "https://talkingabouttesting.coursify.me/auth/coursifyme?origin=https%3A%2F%2Ftalkingabouttesting.coursify.me%2F&sso_path=%2Fusers%2Fsign_in",
+      "onReadyScript": "puppet/custom/fillSignInFormWithInvalidEmailFormat.js",
+      "postInteractionWait": 1000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Try to sign in using another invalid email format (e.g. 'foo@')",
+      "url": "https://talkingabouttesting.coursify.me/auth/coursifyme?origin=https%3A%2F%2Ftalkingabouttesting.coursify.me%2F&sso_path=%2Fusers%2Fsign_in",
+      "onReadyScript": "puppet/custom/fillSignInFormWithAnotherInvalidEmailFormat.js",
+      "postInteractionWait": 1000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Navigate to sign up form through sign in form",
+      "url": "https://talkingabouttesting.coursify.me/auth/coursifyme?origin=https%3A%2F%2Ftalkingabouttesting.coursify.me%2F&sso_path=%2Fusers%2Fsign_in",
+      "readySelector": "#sign_up_link",
+      "clickSelector": "#sign_up_link",
+      "postInteractionWait": 3000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Navigate to sign up form through sign in form and try to sign up without filling the form",
+      "url": "https://talkingabouttesting.coursify.me/auth/coursifyme?origin=https%3A%2F%2Ftalkingabouttesting.coursify.me%2F&sso_path=%2Fusers%2Fsign_in",
+      "readySelector": "#sign_up_link",
+      "clickSelectors": ["#sign_up_link", "input[type='submit']"],
+      "postInteractionWait": 1000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Page not found",
+      "url": "https://talkingabouttesting.coursify.me/pagenotfound",
+      "delay": 3000,
+      "misMatchThreshold": 1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Bottom cookie alert component",
+      "url": "https://talkingabouttesting.coursify.me/",
+      "delay": 3000,
+      "readySelector": ".bootom-cookie-alert",
+      "selectors": ".bootom-cookie-alert",
+      "misMatchThreshold": 1,
       "requireSameDimensions": false
     }
   ],
